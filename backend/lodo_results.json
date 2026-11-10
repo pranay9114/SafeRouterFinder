@@ -1,0 +1,73 @@
+[
+ {
+  "MAE": 2.594624643396448,
+  "RMSE": 3.249720450542258,
+  "R2": 0.9474727311314967,
+  "Closeness": 95.02730565822762,
+  "Acc5": 81.87037037037037,
+  "held_out_districts": [
+   "Alluri Sitharama Raju",
+   "Chittoor",
+   "Kakinada",
+   "Palnadu",
+   "Srikakulam",
+   "YSR Kadapa"
+  ]
+ },
+ {
+  "MAE": 2.554073690253364,
+  "RMSE": 3.214334660891631,
+  "R2": 0.9431272458116495,
+  "Closeness": 95.21006682702104,
+  "Acc5": 83.28888888888889,
+  "held_out_districts": [
+   "Bapatla",
+   "Guntur",
+   "Nandyal",
+   "Sri Sathya Sai",
+   "West Godavari"
+  ]
+ },
+ {
+  "MAE": 2.5730080609809027,
+  "RMSE": 3.244700858583961,
+  "R2": 0.9472942781177687,
+  "Closeness": 94.89793802854314,
+  "Acc5": 82.17777777777778,
+  "held_out_districts": [
+   "Annamayya",
+   "Eluru",
+   "NTR",
+   "Sri Potti Sriramulu Nellore",
+   "Vizianagaram"
+  ]
+ },
+ {
+  "MAE": 2.596928911810981,
+  "RMSE": 3.224924412875613,
+  "R2": 0.9282537693808925,
+  "Closeness": 95.22286835511805,
+  "Acc5": 83.64444444444445,
+  "held_out_districts": [
+   "Anantapur",
+   "East Godavari",
+   "Kurnool",
+   "Prakasam",
+   "Visakhapatnam"
+  ]
+ },
+ {
+  "MAE": 2.6055075180562337,
+  "RMSE": 3.282102819455051,
+  "R2": 0.9356271342743918,
+  "Closeness": 95.10559223790932,
+  "Acc5": 82.31111111111112,
+  "held_out_districts": [
+   "Anakapalli",
+   "Dr. B. R. Ambedkar Konaseema",
+   "Krishna",
+   "Parvathipuram Manyam",
+   "Tirupati"
+  ]
+ }
+]

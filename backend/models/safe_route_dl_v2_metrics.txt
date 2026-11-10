@@ -1,0 +1,35 @@
+SAFE ROUTE FINDER - DL V2 RESULTS
+============================================================
+
+Rows: 23400
+Features: 26
+Training routes: 454
+Validation routes: 98
+Test routes: 98
+
+MAE: 2.572436
+RMSE: 3.223877
+R2: 0.940211
+Score closeness: 97.4276%
+5-Class Accuracy: 81.6043%
+
+Classification Report
+                precision    recall  f1-score   support
+
+Very High Risk       0.83      0.92      0.87       314
+     High Risk       0.90      0.61      0.73       428
+   Medium Risk       0.77      0.85      0.81      1388
+      Low Risk       0.84      0.83      0.84      1383
+ Very Low Risk       0.00      0.00      0.00        15
+
+      accuracy                           0.82      3528
+     macro avg       0.67      0.64      0.65      3528
+  weighted avg       0.82      0.82      0.81      3528
+
+
+Confusion Matrix
+[[ 289   25    0    0    0]
+ [  59  261  108    0    0]
+ [   0    4 1182  202    0]
+ [   0    0  236 1147    0]
+ [   0    0    0   15    0]]

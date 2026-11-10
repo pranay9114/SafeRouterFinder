@@ -1,0 +1,41 @@
+SAFE ROUTE FINDER FINAL MODEL FEATURES
+============================================================
+
+Traffic Features:
+traffic_index
+traffic_safety_score
+
+Lighting Features:
+lighting_score
+
+Weather Features:
+rainfall_mm
+rainfall_risk
+visibility_km
+visibility_safety_score
+month_sin
+month_cos
+
+Crime Features:
+violent_crime_count
+property_crime_count
+women_crime_count
+other_crime_count
+total_crime_count
+crime_rate_per_1000_exposure
+crime_intensity
+crime_pressure
+
+Emergency Features:
+nearest_police_km
+nearest_hospital_km
+emergency_access_score
+emergency_distance
+
+Target:
+safety_score
+
+Excluded columns:
+risk_level
+route_id
+route_name

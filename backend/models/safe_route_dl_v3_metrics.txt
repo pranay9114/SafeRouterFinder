@@ -1,0 +1,36 @@
+SAFE ROUTE FINDER - DL V3
+======================================================================
+
+Dataset rows: 23400
+Features: 31
+
+Training routes: 454
+Validation routes: 98
+Test routes: 98
+
+MAE: 2.568089
+RMSE: 3.229345
+R2: 0.940008
+Score closeness: 97.431908%
+5-Class Accuracy: 80.413832%
+
+Classification Report
+----------------------------------------------------------------------
+                precision    recall  f1-score   support
+
+Very High Risk       0.84      0.92      0.88       314
+     High Risk       0.88      0.61      0.72       428
+   Medium Risk       0.81      0.76      0.78      1388
+      Low Risk       0.78      0.89      0.83      1383
+ Very Low Risk       0.14      0.13      0.14        15
+
+      accuracy                           0.80      3528
+     macro avg       0.69      0.66      0.67      3528
+  weighted avg       0.81      0.80      0.80      3528
+
+Confusion Matrix
+[[ 289   25    0    0    0]
+ [  57  263  108    0    0]
+ [   0   11 1049  328    0]
+ [   0    0  137 1234   12]
+ [   0    0    0   13    2]]

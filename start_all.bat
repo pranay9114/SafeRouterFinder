@@ -1,0 +1,13 @@
+@echo off
+echo Starting Safe Route Services...
+
+echo Starting GraphHopper...
+start "GraphHopper" cmd /k "cd graphhopper && java -Xmx2g -jar graphhopper-web-11.0.jar server config.yml"
+
+echo Starting Backend...
+start "Backend" cmd /k "cd backend && pip install -r requirements.txt && uvicorn api:app --reload"
+
+echo Starting Frontend...
+start "Frontend" cmd /k "cd frontend && npm install && npm run dev"
+
+echo All services are starting up in separate windows.

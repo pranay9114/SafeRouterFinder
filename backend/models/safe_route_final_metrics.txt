@@ -1,0 +1,13 @@
+SAFE ROUTE FINDER - FINAL MODEL RESULTS
+============================================================
+Dataset rows: 23400
+Training rows: 18720
+Testing rows: 4680
+Training routes: 520
+Testing routes: 130
+
+MAE: 2.567829
+RMSE: 3.223347
+R2: 0.936401
+Score closeness: 95.12%
+5-Class Risk Accuracy: 82.65%
