@@ -12,8 +12,9 @@ import {
 
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+const API_BASE_URL = (
+  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"
+).replace(/\/+$/, "");
 
 // ============================================================
 // FIX LEAFLET MARKER ICONS
@@ -3855,9 +3856,23 @@ function SafeRouteMain() {
       );
 
       loadDemoData(source || "Guntur", destination || "Visakhapatnam");
-      setError(
-        "⚠️ Backend server (port 8000) is not connected. Loaded demo route safety analysis so you can explore all dashboard features."
-      );
+
+      const isConnectionError =
+        !err?.message ||
+        err?.message?.includes("Failed to fetch") ||
+        err?.message?.includes("NetworkError") ||
+        err?.message?.includes("Load failed") ||
+        err?.name === "TypeError";
+
+      if (isConnectionError) {
+        setError(
+          `⚠️ Cannot reach backend server (${API_BASE_URL}). Loaded demo route safety analysis so you can explore all dashboard features.`
+        );
+      } else {
+        setError(
+          `⚠️ ${err.message} Loaded demo route safety analysis so you can explore all dashboard features.`
+        );
+      }
     } finally {
 
       setLoading(false);
