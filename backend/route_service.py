@@ -14,12 +14,21 @@ app = FastAPI()
 
 
 # Allow React frontend to access backend
+FRONTEND_URL = os.getenv("FRONTEND_URL", "")
+allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000"
+]
+if FRONTEND_URL:
+    for url in FRONTEND_URL.split(","):
+        clean_url = url.strip().rstrip("/")
+        if clean_url and clean_url not in allowed_origins:
+            allowed_origins.append(clean_url)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173"
-    ],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -30,7 +39,7 @@ app.add_middleware(
 # CONFIGURATION
 # ============================================================
 
-GRAPHOPPER_URL = "http://localhost:8989/route"
+GRAPHOPPER_URL = os.getenv("GRAPHOPPER_URL", "http://localhost:8989/route")
 
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
 

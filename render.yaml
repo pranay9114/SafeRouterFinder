@@ -1,0 +1,49 @@
+services:
+  # ----------------------------------------------------
+  # 1. Safe Route Backend (FastAPI Python Web Service)
+  # ----------------------------------------------------
+  - type: web
+    name: safe-route-backend
+    runtime: python
+    plan: free
+    region: oregon
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: TOMTOM_API_KEY
+        sync: false
+      - key: GRAPHOPPER_URL
+        value: https://graphhopper.com/api/1/route
+      - key: GRAPHHOPPER_API_KEY
+        sync: false
+      - key: FRONTEND_URL
+        fromService:
+          type: web
+          name: safe-route-frontend
+          property: url
+
+  # ----------------------------------------------------
+  # 2. Safe Route Frontend (React + Vite Static Site)
+  # ----------------------------------------------------
+  - type: web
+    name: safe-route-frontend
+    runtime: static
+    plan: free
+    region: oregon
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: safe-route-backend
+          property: url
